@@ -32,11 +32,14 @@ Backend REST API for Mini-LinkedIn social media app built using **Spring Boot**,
 ```bash
 git clone https://github.com/<username>/mini-linkedin-backend.git
 cd mini-linkedin-backend
+
 2. Configure Database
 Create database in MySQL:
 
 CREATE DATABASE mini_linkedin;
+
 Update the following in src/main/resources/application.properties:
+
 spring.datasource.url=jdbc:mysql://localhost:3306/mini_linkedin
 spring.datasource.username=root
 spring.datasource.password=your_password
@@ -62,21 +65,14 @@ Request:
   "password": "12345"
 }
 2. Login
-bash
-Copy
-Edit
 POST /users/login
-Request:
 
-json
-Copy
-Edit
+Request:
 {
   "email": "lakshmi@gmail.com",
   "password": "12345"
 }
 Response:
-
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
@@ -109,9 +105,7 @@ GET /{id}
 Example → /3
 
 Directory Structure (important packages)
-pgsql
-Copy
-Edit
+
 com.ciaancybertech.mini_linkedin_services
 │
 ├── controllers
@@ -131,7 +125,9 @@ com.ciaancybertech.mini_linkedin_services
       ├── JwtAuthFilter.java
       ├── SecurityConfig.java
       └── JwtUtil.java
+
 Running with Postman
+
 Register → /users/register
 Login → Copy JWT token from response
 Set header → Authorization: Bearer <copied-token>
